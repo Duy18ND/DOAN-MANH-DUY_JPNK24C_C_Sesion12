@@ -1,22 +1,26 @@
 #include<stdio.h>
-void In(int arr[],int size){
-	for(int i=0; i<size; i++){
-		printf("%d \t",arr[i]);
-	}
-}
-int main(){
-	int size;
-printf("Nhap kich co cua mang la : ");
-scanf("%d",&size);
+#include<math.h>
+int main() {
+    int number, result;
 
-int arr[size];
+    printf("Moi ban nhap so nguyen bat ky: ");
+    scanf("%d", &number);
+    
+    if (number < 0) {
+        printf("Giai thua khong ton tai cho so am.\n");
+        return 1;  
+    }
 
-for(int i=0; i<size; i++){
-	printf("Phan tu thu %d la : ",i+1);
-	scanf("%d",&arr[i]);
+    result = GiaiThua(number);  
+    printf("Giai thua cua %d la %d\n", number, result);
+
+    return 0;
+}
+	int GiaiThua(int number) {
+    int age = 1;  
+    for (int i = 1; i <= number; i++) {
+        age *= i;
+    }
+    return age;
 }
 
-	In(arr,size);
-	
-return 0;
-}
